@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PersonService } from 'src/app/services/person.service';
-import { ListComponent } from '../list/list.component';
 
 @Component({
   selector: 'app-update',
@@ -10,7 +9,6 @@ import { ListComponent } from '../list/list.component';
   styleUrls: ['./update.component.scss']
 })
 export class UpdateComponent implements OnInit {
-
   formPerson: FormGroup;
   documentTypes: any[] = [];
 
@@ -21,7 +19,7 @@ export class UpdateComponent implements OnInit {
     private activatedRouter: ActivatedRoute,
   ) {
     this.formPerson = formBuilder.group({
-      id: [{value:  1, disabled: false}, [Validators.required]],
+      id: [{value:  null, disabled: false}, [Validators.required]],
       name: [{value: null, disabled: false}, [Validators.required]],
       lastname: [{value: null, disabled: false}, [Validators.required]],
       documentNumber: [{value: null, disabled: false}, [Validators.required]],

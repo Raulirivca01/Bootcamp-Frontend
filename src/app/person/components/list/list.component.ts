@@ -29,12 +29,12 @@ export class ListComponent implements OnInit {
     })
   }
 
-  editarPerson(person: any): void {
+  editarPerson(person: any): any {
     alert('Editando persona ' + person.name)
     this.router.navigate(['./update'], {
       relativeTo: this.activatedRoute
     })
-    
+    return person.id;
   }
 
   deletePerson(person: any): void {
